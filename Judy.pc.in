@@ -1,0 +1,12 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: Judy
+Description: C library creating and accessing dynamic arrays
+URL: https://siriobalmelli.github.io/libjudy
+Version: 1.0.5
+
+Cflags: -I${includedir}
+Libs: -L${libdir} -lJudy

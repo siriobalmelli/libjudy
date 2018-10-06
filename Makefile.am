@@ -12,8 +12,10 @@ AUTOMAKE_OPTIONS = foreign
 #SUBDIRS = src/JudyCommon src/JudyL src/Judy1 src/JudySL src/JudyHS src/obj
 SUBDIRS = src tool doc test
 
+pkgconfig_DATA = Judy.pc
+
 # These files will be included in our tarballs, even though automake knows
 # nothing else about them.
 #EXTRA_DIST = Makefile.multi original_configure .cvsignore
 
-DISTCLEANFILES = config.log config.status Makefile libtool make.out
+DISTCLEANFILES = config.log config.status Makefile libtool make.out Judy.pc install.log
