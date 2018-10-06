@@ -9,6 +9,7 @@ stdenv.mkDerivation rec {
   name = "libjudy";
 
   src = ./.;
+  doCheck = true;
 
   # gcc 4.8 optimisations break judy.
   # http://sourceforge.net/p/judy/mailman/message/31995144/
