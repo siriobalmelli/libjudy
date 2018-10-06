@@ -1,3 +1,8 @@
+1.0.5  Version (Oct 2018) by (sb)
+o Add pkg-config Judy.pc in build
+o Add default.nix for use in https://nixos.org/nix/
+o Version number stays the same: no change to library itself
+
 1.0.5  Version (May 2007) by (twh)
 o added proper clean targets to enable multiple builds
 o added examples directory

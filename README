@@ -53,7 +53,7 @@ INSTALL		Summary  instructions to build, check and install Judy.
 COPYING		Judy deliverable license notice (the LGPL).
 ChangeLog	List of changes per version of Judy.
 
-configure	Autoconf configure script to allow a portable build e
+configure	Autoconf configure script to allow a portable build
                 environment. 
 		
 src/		Header and source files used to build the package.
@@ -113,6 +113,10 @@ If I want to build Judy 32-bit on Linux AMD64 I have to do:
    make check 
    make install 
 
+If I want to tweak the build system, I have to then do:
+  make distclean || true
+  autoreconf -vif
+
 4. LICENSE
 ----------
 
@@ -120,7 +124,6 @@ The user library is licensed under the GNU Lesser Public License (LGPL)
 Version 2.1, February 1999.  The full text of the LGPL is located at:
 
 COPYING
-
 
 5. CHAGE HISTORY
 ----------------
