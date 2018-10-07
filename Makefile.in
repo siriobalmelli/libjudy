@@ -375,7 +375,7 @@ pkgconfig_DATA = Judy.pc
 # These files will be included in our tarballs, even though automake knows
 # nothing else about them.
 #EXTRA_DIST = Makefile.multi original_configure .cvsignore
-DISTCLEANFILES = config.log config.status Makefile libtool make.out Judy.pc
+DISTCLEANFILES = config.log config.status Makefile libtool make.out Judy.pc install.log
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
 
