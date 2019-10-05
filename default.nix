@@ -7,8 +7,16 @@ with nixpkgs;
 
 stdenv.mkDerivation rec {
   name = "libjudy";
+  meta = {
+    homepage = https://github.com/siriobalmelli/libjudy;
+    license = stdenv.lib.licenses.lgpl21Plus;
+    description = "State-of-the-art C library that implements a sparse dynamic array";
+    platforms = stdenv.lib.platforms.unix;
+    maintainers = [ "https://github.com/siriobalmelli" ];
+  };
 
-  src = ./.;
+  src = nix-gitignore.gitignoreSource [] ./.;
+
   doCheck = true;
 
   # gcc 4.8 optimisations break judy.
@@ -16,11 +24,4 @@ stdenv.mkDerivation rec {
   preConfigure = stdenv.lib.optionalString stdenv.cc.isGNU ''
     configureFlagsArray+=("CFLAGS=-fno-strict-aliasing -fno-aggressive-loop-optimizations")
   '';
-
-  meta = {
-    homepage = http://judy.sourceforge.net/;
-    license = stdenv.lib.licenses.lgpl21Plus;
-    description = "State-of-the-art C library that implements a sparse dynamic array";
-    platforms = stdenv.lib.platforms.unix;
-  };
 }
