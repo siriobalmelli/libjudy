@@ -18,6 +18,19 @@ run_command(find_program('cp'), '-v', '-r',
   check: true
 )
 
-# vanilla autotools subproject
-p = mod.add_project('configure')
+##
+# autotools subproject
+#
+# Build only static libraries, otherwise callers (aka "superprojects")
+# will likely build but then fail runtime linkage.
+#
+# This seems to be because this back-end does not support/honor the 'static'
+# flag of 'dependency()' in the superproject.
+##
+p = mod.add_project('configure',
+  configure_options: [
+    '--enable-shared=no',
+    '--enable-static=yes'
+  ]
+)
 Judy_dep = p.dependency('Judy')
